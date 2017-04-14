@@ -3,12 +3,12 @@ and as such will need to prompt you for username and password.
 
     doc = """
     Usage:
-      git-hub [options] pull organization <owner> [<directory>]
-      git-hub [options] pull user <owner> [<directory>]
-      git-hub [options] ls pr organization <owner>
-      git-hub [options] ls pr user <owner>
-      git-hub [options] ls issues organization <owner>
-      git-hub [options] ls issues user <owner>
+      git-github [options] organization <owner> [<directory>]
+      git-github [options] user <owner> [<directory>]
+      git-github [options] ls pr organization <owner>
+      git-github [options] ls pr user <owner>
+      git-github [options] ls issues organization <owner>
+      git-github [options] ls issues user <owner>
 
     Options:
       -h --help                show this help message and exit
@@ -19,7 +19,7 @@ and as such will need to prompt you for username and password.
     around. These commands give you a quick way to push and pull a bunch
     of related repositories.
 
-      pull       This will clone or pull as needed to get you all caught up
+      -          This will clone or pull as needed to get you all caught up
       ls pr      See all the open pull requests.
     """
 
@@ -45,7 +45,7 @@ and as such will need to prompt you for username and password.
         console.log "#{options.repositories.length} repositories found".blue
         options.repositories
       .each (repo) ->
-        if options.pull
+        if options.organization || options.user
           return require('./actions/pull_or_clone.litcoffee') options, repo
         if options.ls and options.pr
           return require('./actions/ls_pr.litcoffee') options, repo
