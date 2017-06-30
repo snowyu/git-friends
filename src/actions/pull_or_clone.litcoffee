@@ -20,9 +20,10 @@ For a repository, pull it or clone it by shelling.
       .then (action) ->
         new Promise (resolve, reject) ->
           exec action, (err, stdout, stderr) ->
-            if err
-              reject err
-            else
-              process.stdout.write stdout
-              process.stderr.write stderr
-              resolve repo
+            #if err
+            #  reject err
+            #else
+            process.stdout.write stdout
+            process.stderr.write stderr
+            console.log err if err
+            resolve repo
