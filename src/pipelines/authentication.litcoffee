@@ -14,7 +14,7 @@ Stages of a pipeline to get login information.
         options.apiUrl = "https://#{options.username}:#{options.password}@api.github.com"
         return callback undefined, options
 
-      if not options['--anonymous']
+      if options['--auth']
         schema = properties:
           username:
             message: 'Your GitHub username'.magenta + ':'.bold

@@ -13,7 +13,7 @@ and as such will need to prompt you for username and password.
     Options:
       -h --help                show this help message and exit
       --version                show version and exit
-      --anonymous              no username and password given, be the proles
+      --auth                   show username and password given, be the proles
 
     Working with GitHub, with a lot of repositories can be a bunch of hunting
     around. These commands give you a quick way to push and pull a bunch
