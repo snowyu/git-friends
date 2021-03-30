@@ -24,6 +24,9 @@ to page until there is nothing left.
           headers:
             'User-Agent': 'git-friends cli'
       request args, (err, response, body) ->
+        if err
+          throw err
+
         if response.headers['x-ratelimit-remaining'] is '0'
           console.error "Whoops -- hit the rate limit".red
           console.error response.headers
